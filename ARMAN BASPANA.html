@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Арман баспана қоғамдық қоры</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background: #f4ffff;
+            color: #222;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo h2 {
+            color: #00b8b0;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00b8b0;
+        }
+
+        /* HERO */
+        .hero {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 8% 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 65px;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 21px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 17px 38px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #00cfc6;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 207, 198, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            background: #00b8b0;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #00b8b0;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            color: #00b8b0;
+            font-size: 45px;
+        }
+
+        /* ABOUT */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #00cfc6, #00b8b0);
+            color: white;
+            padding: 45px;
+            border-radius: 35px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 184, 176, 0.25);
+        }
+
+        .stat-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .stat-card h1 {
+            font-size: 50px;
+        }
+
+        /* REGISTER / QUEUE */
+        .queue {
+            background: linear-gradient(135deg, #00cfc6, #00b8b0);
+            border-radius: 40px;
+            padding: 70px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .queue h2 {
+            font-size: 35px;
+        }
+
+        .queue h1 {
+            font-size: 85px;
+            margin: 20px 0;
+        }
+
+        .join-btn {
+            display: inline-block;
+            margin-top: 25px;
+            background: white;
+            color: #00b8b0;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .join-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* CONTACTS */
+        .contacts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .contact-box h3 {
+            color: #00b8b0;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .socials a {
+            background: #00cfc6;
+            color: white;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+
+        footer {
+            background: #00b8b0;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        @media(max-width: 900px) {
+            nav { display: none; }
+            .hero-content h1 { font-size: 45px; }
+            .about, .contacts { grid-template-columns: 1fr; }
+            .queue h1 { font-size: 55px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h2>Арман баспана</h2>
+    </div>
+    <nav>
+        <a href="#">Басты бет</a>
+        <a href="#about">Біз туралы</a>
+        <a href="#stats">Садақа</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Әр отбасыға баспана</h1>
+        <p>Арман баспана қоғамдық қоры еліміздегі баспанасы жоқ отбасыларға көмек көрсету мақсатында құрылған қайырымдылық қоры.</p>
+        <div class="btns">
+            <a class="btn btn-primary" href="https://pay.kaspi.kz/pay/kpiupo0h" target="_blank" onclick="simulatePayment()">
+                Садақа беру
+            </a>
+            <a class="btn btn-secondary" href="#register">
+                Үй кезегіне өтініш беру
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="section-title">
+        <h2>Біз туралы</h2>
+    </div>
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200&auto=format&fit=crop">
+        <div class="about-text">
+            <p>Арман баспана қоғамдық қоры еліміздегі әрбір баспанасы жоқ отбасыға баспана алуға қолдау көрсету мақсатында құрылған.</p>
+            <br>
+            <p>Мақсаты: жетім-жесірлерге, жағдайы төмен отбасыларға көмек беру.</p>
+        </div>
+    </div>
+</section>
+
+<section id="stats">
+    <div class="section-title">
+        <h2>Статистика</h2>
+    </div>
+    <div class="stats">
+        <div class="stat-card">
+            <h3>Жиналған қаражат</h3>
+            <h1 id="moneyCounter">0 ₸</h1>
+            <p style="font-size: 14px; margin-top: 10px;">(Kaspi төлемдері ескерілген)</p>
+        </div>
+        <div class="stat-card">
+            <h3>Тіркелген адамдар</h3>
+            <h1 id="peopleCounter">0</h1>
+        </div>
+    </div>
+</section>
+
+<section id="register">
+    <div class="queue">
+        <h2>Тіркелген халық саны </h2>
+        <h1 id="queueNumber">№ 0</h1>
+        <button class="join-btn" onclick="joinPeople()">
+            Үй кезегіне өтініш беру
+        </button>
+    </div>
+</section>
+
+<section id="contacts">
+    <div class="section-title">
+        <h2>Контакты</h2>
+    </div>
+    <div class="contacts">
+        <div class="contact-box">
+            <h3>Байланыс</h3>
+            <p><b>Қор:</b> Арман баспана қоғамдық қоры</p>
+            <p><b>Мекенжай:</b> Алматы, Толе би 23а</p>
+            <p><b>Телефон:</b> 87079097258</p>
+        </div>
+        <div class="contact-box">
+            <h3>Банк реквизиттері</h3>
+            <p><b>БИН:</b> 230540028609</p>
+            <p><b>Банк:</b> АО "Kaspi Bank"</p>
+            <p><b>Счет:</b> KZ85722S000053497401</p>
+            <div class="socials">
+                <a href="https://www.instagram.com/arman_baspana_?igsh=MTJsY3hrcGY2cWNoZQ==" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@arman_baspana07kz?_r=1&_t=ZS-96DQBL5RFgG" target="_blank">TikTok</a>
+                <a href="https://wa.me/87079097258" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Арман баспана қоғамдық қоры
+</footer>
+
+<script>
+    // Бастапқы мәндер (осы жерді өзгертуге болады)
+    let people = 0;
+    let money = 0;
+
+    // Кезекті жаңарту функциясы
+    function joinPeople() {
+        people++;
+        updateUI();
+        alert("Сіздің өтінішіңіз қабылданды! Кезек нөміріңіз: №" + people);
+    }
+
+    // Төлем жасалғанын имитациялау (Демонстрация үшін)
+    function simulatePayment() {
+        // Каспийге өткенде соманы автоматты түрде қосу (мысалы 100 тг)
+        money += 100;
+        updateUI();
+    }
+
+    // Экрандағы мәліметтерді жаңарту
+    function updateUI() {
+        document.getElementById("peopleCounter").innerText = people;
+        document.getElementById("moneyCounter").innerText = money.toLocaleString() + " ₸";
+        document.getElementById("queueNumber").innerText = "№ " + people;
+    }
+</script>
+
+</body>
+</html>
